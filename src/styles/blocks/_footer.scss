@@ -1,3 +1,5 @@
+@use "../utils/mixins";
+
 .footer {
   display: grid;
   background: #1c1a26;
@@ -33,7 +35,7 @@
   &__logo {
     grid-column: 1/3;
     margin: 64px 0 40px;
-    @include size(156px, 30px);
+    @include mixins.size(156px, 30px);
 
     @media (min-width: 768px) {
       margin: 93px 0 65px;
@@ -132,36 +134,36 @@
     }
 
     &--fb {
-      @include size(20px, 20px);
+      @include mixins.size(20px, 20px);
       background-image: url("../assets/320/fb.svg");
       background-repeat: no-repeat;
 
       &:hover {
-        @include size(20px, 20px);
+        @include mixins.size(20px, 20px);
         background-image: url("../assets/320/fb-white.svg");
         background-repeat: no-repeat;
       }
     }
 
     &--inst {
-      @include size(20px, 20px);
+      @include mixins.size(20px, 20px);
       background-image: url("../assets/320/inst.svg");
       background-repeat: no-repeat;
 
       &:hover {
-        @include size(20px, 20px);
+        @include mixins.size(20px, 20px);
         background-image: url("../assets/320/inst-white.svg");
         background-repeat: no-repeat;
       }
     }
 
     &--twit {
-      @include size(20px, 20px);
+      @include mixins.size(20px, 20px);
       background-image: url("../assets/320/twit.svg");
       background-repeat: no-repeat;
 
       &:hover {
-        @include size(20px, 20px);
+        @include mixins.size(20px, 20px);
         background-image: url("../assets/320/twit-white.svg");
         background-repeat: no-repeat;
       }

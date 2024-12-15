@@ -1,3 +1,5 @@
+@use "../utils/mixins";
+
 .header {
   height: 64px;
   display: flex;
@@ -10,7 +12,7 @@
   }
 
   &__logo {
-    @include size(132px, 32px);
+    @include mixins.size(132px, 32px);
   }
 
   &__menu-link {

@@ -1,16 +1,17 @@
-@import "utils";
-@import "fonts";
-@import "blocks/title";
-@import "blocks/text";
-@import "blocks/link";
-@import "blocks/menu";
-@import "blocks/nav";
-@import "blocks/header";
-@import "blocks/main";
-@import "blocks/what-we-bake";
-@import "blocks/card";
-@import "blocks/about";
-@import "blocks/footer";
+@use "utils";
+@use "fonts";
+@use "blocks/title";
+@use "blocks/text";
+@use "blocks/link";
+@use "blocks/menu";
+@use "blocks/nav";
+@use "blocks/header";
+@use "blocks/main";
+@use "blocks/what-we-bake";
+@use "blocks/card";
+@use "blocks/about";
+@use "blocks/footer";
+@use "utils/vars";
 
 * {
   box-sizing: border-box;
@@ -23,12 +24,12 @@ html {
 
 .page {
   margin: 0;
-  background: $c-pink;
+  background: vars.$c-pink;
   font-family: "Inter", sans-serif;
 }
 
 .blue {
-  background: $c-blue;
+  background: vars.$c-blue;
 }
 
 .page-menu {
