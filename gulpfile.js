@@ -4,11 +4,10 @@ import autoprefixer from "gulp-autoprefixer";
 import cleanCSS from "gulp-clean-css";
 import concat from "gulp-concat";
 import htmlmin from "gulp-htmlmin";
-import imagemin from "gulp-imagemin";
 import gulpSass from "gulp-sass";
 import sourcemaps from "gulp-sourcemaps";
 import uglify from "gulp-uglify";
-import dartSass from "sass";
+import * as dartSass from "sass";
 
 const sass = gulpSass(dartSass);
 
@@ -34,8 +33,8 @@ function styles() {
     .pipe(autoprefixer())
     .pipe(cleanCSS())
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("./dist/styles"))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest("./dist/styles"));
+  // .pipe(browserSync.stream());
 }
 
 function scripts() {
@@ -43,14 +42,13 @@ function scripts() {
     .src(paths.js)
     .pipe(concat("main.js"))
     .pipe(uglify())
-    .pipe(gulp.dest("./dist/scripts"))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest("./dist/scripts"));
+  // .pipe(browserSync.stream());
 }
 
 function assets() {
   return gulp
     .src(paths.assets, { encoding: false })
-    .pipe(imagemin())
     .pipe(gulp.dest("./dist/assets"));
 }
 function fonts() {
@@ -63,6 +61,8 @@ function watchFiles() {
       baseDir: "./dist",
     },
     notify: false,
+    open: false,
+    ui: false,
   });
   gulp.watch(paths.html, html).on("change", browserSync.reload);
   gulp.watch(paths.scss, styles);
@@ -70,9 +70,6 @@ function watchFiles() {
   gulp.watch(paths.assets, assets).on("change", browserSync.reload);
 }
 
-const build = gulp.series(
-  gulp.parallel(html, styles, scripts, assets, fonts),
-  watchFiles
-);
+const build = gulp.series(gulp.parallel(html, styles, scripts, assets, fonts));
 
 export default build;

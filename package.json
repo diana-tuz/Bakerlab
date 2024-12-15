@@ -8,13 +8,15 @@
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
-    "gulp-image": "^6.3.1",
     "gulp-imagemin": "^9.1.0",
     "gulp-print": "^5.0.2",
     "gulp-sass": "^6.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.83.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "main": "index.js",
   "version": "1.0.0",
@@ -23,6 +25,7 @@
     "last 2 versions"
   ],
   "scripts": {
-    "build": "gulp"
+    "build": "gulp --production",
+    "start": "gulp"
   }
 }
